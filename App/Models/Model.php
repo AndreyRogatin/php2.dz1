@@ -31,4 +31,11 @@ abstract class Model
             return $res[0];
         }
     }
+
+    public static function findNLast(int $num)
+    {
+        $db = new Db;
+        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT ' . $num;
+        return $db->query($sql, [], static::class);
+    }
 }

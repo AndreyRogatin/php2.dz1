@@ -9,9 +9,4 @@ class Article extends Model
 
     public $title;
     public $body;
-
-    public static function findNLastArticles($num)
-    {
-        return array_reverse(array_slice(static::findAll(), -$num));
-    }
 }
